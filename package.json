@@ -1,0 +1,38 @@
+{
+  "name": "ng2-django-channels-data-binding",
+  "version": "0.1.0",
+  "description": "Angular 2 library for interacting with a Django Channels data binding backend.",
+  "main": "index.js",
+  "scripts": {
+    "prepublish": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devmapal/ng2-django-channels-data-binding.git"
+  },
+  "keywords": [
+    "angular",
+    "angular2",
+    "django",
+    "channels",
+    "websocket",
+    "data binding"
+  ],
+  "typings": "./index.d.ts",
+  "author": "Fabian Schaffert",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/devmapal/ng2-django-channels-data-binding/issues"
+  },
+  "homepage": "https://github.com/devmapal/ng2-django-channels-data-binding#readme",
+  "dependencies": {
+    "@angular/core": "^2.4.1",
+    "@types/core-js": "^0.9.35",
+    "rxjs": "^5.0.2",
+    "zone.js": "^0.7.4"
+  },
+  "devDependencies": {
+    "typescript": "^2.1.4"
+  }
+}
