@@ -1,5 +1,4 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
-import {CommonModule} from "@angular/common";
 
 import { WebSocketDataBindingService } from './src/web-socket-data-binding.service';
 import { WebSocketDemultiplexerService } from './src/web-socket-demultiplexer.service';
