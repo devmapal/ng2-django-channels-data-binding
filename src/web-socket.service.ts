@@ -6,7 +6,7 @@ import { WebSocketServiceConfig } from './web-socket-service-config';
 @Injectable()
 export class WebSocketService {
   private ws: WebSocket;
-  wsObservable: Observable<any>;
+  private wsObservable: Observable<any>;
 
   constructor(config: WebSocketServiceConfig) {
     this.wsObservable = Observable.create((observer: any) => {
@@ -35,6 +35,16 @@ export class WebSocketService {
         this.ws.close();
       };
     }).share();
+  }
+
+  getDataStream(): Observable<any> {
+    return Observable.create((observer: any) => {
+      let subscription = this.wsObservable.subscribe(observer);
+
+      return () => {
+        subscription.unsubscribe();
+      };
+    }).retryWhen((error: any) => error.delay(3000));
   }
 
   sendData(message: Object): void {

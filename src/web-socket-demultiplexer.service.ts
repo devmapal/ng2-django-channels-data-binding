@@ -7,11 +7,21 @@ import { WebSocketStream } from './web-socket-stream';
 @Injectable()
 export class WebSocketDemultiplexerService {
   private eventByStream: Map<string, EventEmitter<Object>>;
+  private webSocketService: WebSocketService;
 
-  constructor(private webSocketService: WebSocketService) {
-    webSocketService.wsObservable.subscribe(data => {
+  constructor(webSocketService: WebSocketService) {
+    this.webSocketService = webSocketService;
+    this.webSocketService.getDataStream().subscribe(
+      (message)=> {
         this.onmessage(JSON.parse(message));
-    });
+      },
+      (message)=> {
+        console.log("error", message);
+      },
+      ()=> {
+        console.log("complete");
+      }
+    );
 
     this.eventByStream = new Map<string, EventEmitter<Object>>();
   }
