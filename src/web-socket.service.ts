@@ -28,7 +28,7 @@ export class WebSocketService {
       }
  
       this.ws.onmessage = (event) => {
-        observer.next(JSON.parse(event.data));
+        observer.next(event.data);
       }
  
       return () => {
@@ -38,6 +38,6 @@ export class WebSocketService {
   }
 
   sendData(message: Object): void {
-    this.ws.send(JSON.stringify(message));
+    this.ws.send(message);
   }
 }

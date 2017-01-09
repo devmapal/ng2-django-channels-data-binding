@@ -10,7 +10,7 @@ export class WebSocketDemultiplexerService {
 
   constructor(private webSocketService: WebSocketService) {
     webSocketService.wsObservable.subscribe(data => {
-        this.onmessage(data)
+        this.onmessage(JSON.parse(message));
     });
 
     this.eventByStream = new Map<string, EventEmitter<Object>>();
@@ -27,10 +27,10 @@ export class WebSocketDemultiplexerService {
   }
 
   sendData(stream: string, payload: Object): void {
-    this.webSocketService.sendData({
+    this.webSocketService.sendData(JSON.stringify({
       'stream': stream,
       'payload': payload,
-    });
+    }));
   }
 
   subscribe(stream: string, callback: WebSocketDemultiplexerCallback): void {
