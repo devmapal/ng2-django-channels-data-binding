@@ -26,13 +26,13 @@
     "url": "https://github.com/devmapal/ng2-django-channels-data-binding/issues"
   },
   "homepage": "https://github.com/devmapal/ng2-django-channels-data-binding#readme",
-  "dependencies": {
+  "peerDependencies": {
     "@angular/core": "2.x",
-    "@types/core-js": "^0.9.35",
     "rxjs": "5.x",
     "zone.js": ">=0.6.0"
   },
   "devDependencies": {
+    "@types/core-js": "^0.9.35",
     "typescript": "2.x"
   }
 }
