@@ -1,7 +1,7 @@
 import { EventEmitter, Injectable } from '@angular/core';
 
 import { WebSocketDataBindingCallback } from './web-socket-data-binding-callback';
-import { WebSocketDemultiplexerService } from './web-socket-demultiplexer.service';
+import { WebSocketDemultiplexerService } from 'ng2-django-channels-demultiplexing';
 import { DataBinding } from './data-binding';
 
 @Injectable()
