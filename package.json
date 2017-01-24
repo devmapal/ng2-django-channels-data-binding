@@ -28,12 +28,14 @@
   "homepage": "https://github.com/devmapal/ng2-django-channels-data-binding#readme",
   "peerDependencies": {
     "@angular/core": "2.x",
-    "ng2-django-channels-demultiplexing": "0.1.0",
-    "rxjs": "5.x",
-    "zone.js": ">=0.6.0"
+    "ng2-django-channels-demultiplexing": "0.1.0"
   },
   "devDependencies": {
+    "@angular/core": "2.x",
     "@types/core-js": "^0.9.35",
-    "typescript": "2.x"
+    "ng2-django-channels-demultiplexing": "0.1.0",
+    "rxjs": "5.x",
+    "typescript": "2.x",
+    "zone.js": ">=0.6.0"
   }
 }
