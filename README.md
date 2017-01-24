@@ -5,7 +5,7 @@
 To install this library, run:
 
 ```bash
-$ npm install ng2-django-channels-data-binding --save
+$ npm install ng2-django-channels-data-binding ng2-django-channels-demultiplexing --save
 ```
 
 ## Usage
@@ -18,8 +18,9 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 
-// Import library
+// Import libraries
 import { Ng2DjangoChannelsDataBindingModule } from 'ng2-django-channels-data-binding';
+import { Ng2DjangoChannelsDemultiplexingModule } from 'ng2-django-channels-demultiplexing';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { Ng2DjangoChannelsDataBindingModule } from 'ng2-django-channels-data-bin
     BrowserModule,
 
     // Specify library as an import and configure the WebSocket URL
-    Ng2DjangoChannelsDataBindingModule.forRoot({websocket_url: 'ws://127.0.0.1:8001/api/ws'})
+    Ng2DjangoChannelsDataBindingModule,
+    Ng2DjangoChannelsDemultiplexingModule.forRoot({websocket_url: 'ws://127.0.0.1:8001/api/ws'})
   ],
   providers: [],
   bootstrap: [AppComponent]
